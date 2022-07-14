@@ -1,8 +1,9 @@
+import string
 from tkinter import *
 from random import randint
 
 #User choice
-def the_choice(x):
+def the_choice(x: string) -> None:
     if x == "rck":
         rock_user.configure(image=rck)
     elif x == "pap":
@@ -23,23 +24,23 @@ def the_choice(x):
         
 #Scores
 
-def play_score():
+def play_score() -> None:
     score = int(play_count["text"])
     score += 1
     play_count["text"] = str(score)
 
 
-def comp_score():
+def comp_score() -> None:
     score = int(comp_count["text"])
     score += 1
     comp_count["text"] = str(score)
 
 #The winner
 
-def who_won(x):
+def who_won(x: string) -> None:
     winner["text"] = x
 
-def the_winner(player, ai):
+def the_winner(player: string, ai: string):
     if player == ai:
         who_won("A tie!")
     elif player == "rck":
